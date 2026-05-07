@@ -23,6 +23,9 @@ public class BookShelf {
                 .sorted(Comparator.comparing(Book::getAuthor))
                 .collect(Collectors.toList());
     }
+    public List<Book> arrange(Comparator<Book> criteria) {
+        return books.stream().sorted(criteria).collect(Collectors.toList());
+    }
 
     public List<Book> arrangeByPublicationDate() {
         return books.stream()
@@ -30,7 +33,5 @@ public class BookShelf {
                 .collect(Collectors.toList());
     }
 
-    public List<Book> arrange(Comparator<Book> criteria) {
-        return books.stream().sorted(criteria).collect(Collectors.toList());
-    }
+
 }

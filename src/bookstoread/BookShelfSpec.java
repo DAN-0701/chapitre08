@@ -74,4 +74,11 @@ public class BookShelfSpec {
         List<Book> books = shelf.arrange(Comparator.<Book>naturalOrder().reversed());
         assertEquals(asList(mythicalManMonth, effectiveJava, codeComplete), books, () -> "Books in a bookshelf are arranged in descending order of book title");
     }
+    @Test
+    void bookshelfArrangeByBookDate(){
+        shelf.add(effectiveJava,codeComplete,mythicalManMonth);
+        List<Book> books=shelf.arrangeByPublicationDate();
+        assertEquals(asList(mythicalManMonth, codeComplete, effectiveJava), books,
+                "Books should be arranged by publication date in ascending order");
+    }
 }
