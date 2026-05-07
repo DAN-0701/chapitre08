@@ -133,6 +133,7 @@ public class BookShelfSpec {
         void bookshelfContainsTwoBooksWhenTwoBooksAdded() {
             // Test case removed for brevity
         }
+
         @Test
         @DisplayName("Renvoie au client une collection de livres immuable ")
         void bookshelfIsImmutableForClient() {
