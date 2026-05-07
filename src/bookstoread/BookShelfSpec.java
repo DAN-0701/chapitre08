@@ -56,7 +56,7 @@ public class BookShelfSpec {
     @Test
     void bookshelfArrangedByBookTitle() {
         shelf.add(effectiveJava, codeComplete, mythicalManMonth);
-        List<Book> books = shelf.arrangeByTitle();
+        List<Book> books = shelf.arrange();
         assertEquals(asList(codeComplete, effectiveJava, mythicalManMonth), books,
                 "Books should be arranged lexicographically by title");
     }
@@ -64,7 +64,7 @@ public class BookShelfSpec {
     @Test
     void booksInBookShelfAreInInsertionOrderAfterCallingArrange() {
         shelf.add(effectiveJava, codeComplete, mythicalManMonth);
-        shelf.arrangeByTitle();
+        shelf.arrange();
         assertEquals(asList(effectiveJava, codeComplete, mythicalManMonth), shelf.books(),
                 "Books in bookshelf are in insertion order");
     }

@@ -14,10 +14,8 @@ public class BookShelf {
         books.addAll(Arrays.asList(booksToAdd));
     }
 
-    public List<Book> arrangeByTitle() {
-        return books.stream()
-                .sorted()
-                .collect(Collectors.toList());
+    public List<Book> arrange() {
+        return arrange(Comparator.naturalOrder());
     }
 
     public List<Book> arrangeByAuthor() {
